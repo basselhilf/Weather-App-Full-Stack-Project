@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Monoton&display=swap" rel="stylesheet">
+    <title>Weather</title>
+  </head>
+  <body>
+    <script id="template" type="text/x-handlebars-template">
+      {{#each allCityData}}
+        <div class='box'>
+          <img class="save" src="https://image.flaticon.com/icons/svg/1828/1828817.svg">
+          <img class="delete" src="https://image.flaticon.com/icons/svg/753/753340.svg">
+          <h2 class="cityN">{{this.name}}</h2>
+          <span>{{this.temperature}}<img src="https://image.flaticon.com/icons/svg/899/899706.svg"></span>
+          <span>{{this.condition}}</span>
+          <img class="wimg" src="http://openweathermap.org/img/wn/{{this.conditionPic}}@2x.png">
+          
+          </div>
+      {{/each}}
+    </script>
+    
+    
+    <div id="container">
+      <div id="header">
+          <h1>WeatherAPP</h1>
+        <input id="input" type="text" placeholder="Type a city name (NewYork,London ...)" />
+        <button id="btn">Search!</button>
+      </div>
+      <div id="list"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="TempManager.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
